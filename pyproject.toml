@@ -1,0 +1,56 @@
+[tool.poetry]
+name="offeringService"
+version="0.1.0"
+description="Offering Service"
+readme="README.md"
+authors=[]
+
+[tool.poetry.dependencies]
+python="^3.10"
+gunicorn = "21.2.0"
+redis = "^5.0.3"
+fastapi = "^0.111.0"
+pydantic-settings = "^2.2.1"
+uvicorn = "^0.30.0"
+pytest = "^8.2.1"
+httpx = "^0.27.0"
+pytest-asyncio = "^0.23.7"
+loguru = "^0.7.2"
+geopy = "^2.4.1"
+aioredis = "^2.0.1"
+setuptools = "^70.0.0"
+pytest-mock = "^3.14.0"
+testcontainers = "^4.5.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.4.2"
+isort = "^5.13.2"
+ruff = "^0.4.7"
+
+[build-system]
+requires=["poetry-core"]
+build-backend="poetry.core.masonry.api"
+
+[tool]
+[tool.isort]
+line_length = 120
+multi_line_output = 3
+sections = "FUTURE,STDLIB,THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
+include_trailing_comma = true
+force_grid_wrap = 2
+combine_as_imports = true
+use_parentheses = true
+
+[tool.ruff]
+line-length = 120
+select = [
+    "E",
+    "F",
+    "SIM",
+    "W",
+]
+
+[tool.black]
+line-length = 120
+target-version = ['py310']
+include = '\.pyi?$'

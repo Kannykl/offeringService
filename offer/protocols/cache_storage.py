@@ -1,0 +1,9 @@
+from typing import Protocol
+
+
+class CacheStorage(Protocol):
+    async def get_offers(self, user_location: str) -> list[dict] | None: ...
+
+    async def set_offers(self, user_location: str, offers: list[dict]) -> None: ...
+
+    async def remove_user_location(self, user_location: str) -> None: ...
